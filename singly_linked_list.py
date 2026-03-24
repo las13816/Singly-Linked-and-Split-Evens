@@ -8,12 +8,10 @@ class SinglyLinkedList:
     def __init__(self):
         self.head = None
 
-  
     def build_list_forward(self, values):
         for value in values:
             self.insert_end(value)
 
-    
     def build_list_backward(self, values):
         for value in values:
             self.insert_front(value)
@@ -41,7 +39,6 @@ class SinglyLinkedList:
     def delete_last(self):
         if not self.head:
             return
-
         if not self.head.next:
             self.head = None
             return
@@ -54,7 +51,6 @@ class SinglyLinkedList:
     def delete_value(self, value):
         if not self.head:
             return
-
         if self.head.data == value:
             self.head = self.head.next
             return
@@ -77,7 +73,11 @@ class SinglyLinkedList:
             else:
                 current = current.next
 
+
     def display(self):
+        if self.head is None:
+            return "Head -> -> None"
+
         current = self.head
         output = "Head -> "
         while current:
@@ -86,7 +86,7 @@ class SinglyLinkedList:
         output += "None"
         return output
 
-    
+
     def display_reverse_nr(self):
         stack = []
         current = self.head
